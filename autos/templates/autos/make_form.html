@@ -1,0 +1,13 @@
+{% extends "base_bootstrap.html" %}
+
+{% block content %}
+  <form action="{% url 'autos:all' %}" method="post">
+    {% csrf_token %}
+
+    <label for = "make">Enter make:
+    <input type = "text" id ="make" name = "make">
+    <br>
+    <input type="submit" value="Submit">
+    <input type="submit" onclick="window.location='{% url 'autos:all' %}' ; return false;" value="Cancel">
+  </form>
+{% endblock %}
